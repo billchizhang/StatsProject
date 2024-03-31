@@ -1,0 +1,59 @@
+selected features based on RFE: 
+['Own', 'AutoPartner', 'InsurancePartner', 'Intermediary', 'IRR', 'Credit_Score', 'NewCar', 'UsedCar', 'Term', 'Offered_Rate', 'Refinance', 'Competitor', 'Prime', 'Offered_competitor', 'Offered_prime']
+Confusion Matrix: 
+[[1190  112]
+ [ 338  168]]
+Accuracy: 
+0.7511061946902655
+Recall: 
+0.33201581027667987
+Precision: 
+0.6
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:               Accepted   R-squared:                       0.166
+Model:                            OLS   Adj. R-squared:                  0.165
+Method:                 Least Squares   F-statistic:                     130.7
+Date:                Sun, 31 Mar 2024   Prob (F-statistic):          1.48e-274
+Time:                        09:06:19   Log-Likelihood:                -3781.0
+No. Observations:                7231   AIC:                             7586.
+Df Residuals:                    7219   BIC:                             7669.
+Df Model:                          11                                         
+Covariance Type:            nonrobust                                         
+======================================================================================
+                         coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------
+const                  1.6380      0.188      8.731      0.000       1.270       2.006
+Own                    0.5616      0.048     11.761      0.000       0.468       0.655
+AutoPartner            0.1201      0.050      2.392      0.017       0.022       0.219
+InsurancePartner       0.4748      0.047     10.037      0.000       0.382       0.568
+Intermediary           0.4815      0.047     10.211      0.000       0.389       0.574
+IRR                   -0.0524      0.010     -5.026      0.000      -0.073      -0.032
+Credit_Score          -0.0010      0.000     -6.284      0.000      -0.001      -0.001
+NewCar                 0.3074      0.060      5.110      0.000       0.189       0.425
+UsedCar                0.5569      0.064      8.754      0.000       0.432       0.682
+Term                   0.0009      0.001      0.982      0.326      -0.001       0.003
+Offered_Rate          -0.1217      0.025     -4.895      0.000      -0.170      -0.073
+Refinance              0.7737      0.067     11.526      0.000       0.642       0.905
+Competitor            -0.0942      0.018     -5.290      0.000      -0.129      -0.059
+Prime                 -0.2354      0.060     -3.919      0.000      -0.353      -0.118
+Offered_competitor    -0.0275      0.014     -2.022      0.043      -0.054      -0.001
+Offered_prime          0.1137      0.036      3.181      0.001       0.044       0.184
+==============================================================================
+Omnibus:                      903.012   Durbin-Watson:                   1.989
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              793.641
+Skew:                           0.732   Prob(JB):                    4.60e-173
+Kurtosis:                       2.301   Cond. No.                     1.94e+17
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The smallest eigenvalue is 1.04e-25. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+[[ 0.91592372 -1.59342761  0.38652672  0.41676704 -0.10185982 -0.0024539
+  -0.85171818  0.20523116 -0.02116088  0.07213903  0.77227688  0.24419173
+   0.26593745 -0.17205271 -0.19379842]]
+Odd Ratios: 
+[[2.49908265 0.20322783 1.47185972 1.51704906 0.90315615 0.99754911
+  0.42668119 1.22780886 0.97906144 1.07480476 2.16468939 1.27658907
+  1.30465344 0.8419348  0.82382396]]

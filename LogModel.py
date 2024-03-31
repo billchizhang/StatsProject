@@ -16,10 +16,6 @@ features = ['Own','AutoPartner','InsurancePartner','Intermediary','IRR','Credit_
 X = df[features]
 Y = df.Accepted
 # find out the p-values 
-X2 = sm.add_constant(X)
-est = sm.OLS(Y, X2)
-est2 = est.fit()
-print(est2.summary())
 # we select features based on recursive feature elimination of 9 features left 
 rfe = RFE(LogisticRegression(solver='lbfgs', max_iter=1000), n_features_to_select=9)
 rfe = rfe.fit(X, Y)
@@ -37,6 +33,17 @@ Y_pred = logreg.predict(X_test)
 cnf_matrix = metrics.confusion_matrix(Y_test, Y_pred)
 print("Confusion Matrix: ")
 print(cnf_matrix)
+print("Accuracy: ")
+print(metrics.accuracy_score(Y_test, Y_pred))
+print("Recall: ")
+print(metrics.recall_score(Y_test, Y_pred))
+print("Precision: ")
+print(metrics.precision_score(Y_test, Y_pred))
+# find out the p-values only for the completeness of the report, we are not using p-value for feature selection 
+X2 = sm.add_constant(X_selected)
+est = sm.OLS(Y, X2)
+est2 = est.fit()
+print(est2.summary())
 # calculate the odds ratio to understand which factors/features are affecting the result 
 print(logreg.coef_)
 odds_ratio = np.exp(logreg.coef_)
