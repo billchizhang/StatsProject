@@ -10,8 +10,9 @@ from sklearn.feature_selection import RFE
 # loading data from the csv file 
 df = pd.read_csv('LoanPricing.csv')
 # building a logreg model using sklearn 
-features = ['Own','AutoPartner','InsurancePartner','Intermediary','IRR','Credit_Score','NewCar','UsedCar','Refinance','Amount',
+features = ['Own','AutoPartner','InsurancePartner','Intermediary','IRR','Credit_Score','NewCar','UsedCar','Amount',
             'Term','Offered_Rate','Refinance','Competitor','Prime', 'Offered_competitor', 'Offered_prime']
+
 X = df[features]
 Y = df.Accepted
 # find out the p-values 
