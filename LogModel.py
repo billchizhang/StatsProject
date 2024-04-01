@@ -56,4 +56,4 @@ applicant = pd.read_csv('ApplicantPool.csv', nrows=100)
 X_app = applicant[features]
 Y_app_pred = logreg.predict(X_app)
 X_app['Approved'] = Y_app_pred
-X_app.to_csv('PredictedApporaval.csv')
+X_app.to_csv('PredictedApporval.csv')
